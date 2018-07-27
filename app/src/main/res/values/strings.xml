@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MTGHelper</string>
+    <string name="howmanyplayers">How Many Players?</string>
+    <string name="chooseastyle">Choose A Style</string>
+    <string name="commander">Commander</string>
+    <string name="standard">Standard</string>
+</resources>
