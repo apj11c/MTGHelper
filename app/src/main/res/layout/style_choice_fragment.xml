@@ -11,7 +11,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="@android:color/background_dark"
-        app:srcCompat="@drawable/backgroundcard" />
+        app:srcCompat="@drawable/backgroundcard"
+        android:layout_alignParentLeft="true" />
 
     <TextView
         android:id="@+id/textView2"
@@ -41,7 +42,8 @@
         android:onClick="onClickListener"
         android:text="@string/commander"
         android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_alignParentLeft="true" />
 
     <Button
         android:id="@+id/standardButton"
@@ -52,5 +54,6 @@
         android:onClick="onClickListener"
         android:text="@string/standard"
         android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_toRightOf="@+id/commanderButton" />
 </RelativeLayout>
