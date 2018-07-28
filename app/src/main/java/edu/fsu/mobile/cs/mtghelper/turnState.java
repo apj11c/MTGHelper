@@ -1,6 +1,7 @@
 package edu.fsu.mobile.cs.mtghelper;
 
 public class turnState {
+    public int test;
     public int[] health;
     public int[] infect;
     public int[][] commanderDamage;
