@@ -13,28 +13,27 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="@android:color/background_dark"
-        tools:context=".StandardActivity"
-        android:layout_alignParentLeft="true">
+        tools:context=".StandardActivity">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:background="@android:color/background_dark"
-            tools:context=".StandardActivity"
-            android:layout_alignParentLeft="true">
+            tools:context=".StandardActivity">
 
             <TextView
                 android:id="@+id/textView26"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/textView27"
                 android:text="I#"
                 android:textColor="@color/colorAccent"
-                android:textSize="25sp"
-                android:layout_alignParentLeft="true" />
+                android:textSize="25sp" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -122,9 +121,9 @@
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="73dp"
+                android:layout_above="@+id/textView28"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="118dp"
                 android:text="Phase 1"
                 android:textColor="@color/colorAccent"
                 android:textSize="35sp" />
@@ -173,8 +172,10 @@
                 android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/textView15"
-                android:layout_centerHorizontal="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="69dp"
+                android:layout_marginTop="204dp"
                 android:text="Phase 6"
                 android:textColor="@color/colorAccent"
                 android:textSize="35sp" />
@@ -183,8 +184,10 @@
                 android:id="@+id/textView17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/textView16"
-                android:layout_centerHorizontal="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="69dp"
+                android:layout_marginTop="204dp"
                 android:text="Phase 7"
                 android:textColor="@color/colorAccent"
                 android:textSize="35sp" />
@@ -248,6 +251,7 @@
                 android:text="Turn 1"
                 android:textColor="@color/colorAccent"
                 android:textSize="23sp" />
+
         </RelativeLayout>
 
         <TextView
