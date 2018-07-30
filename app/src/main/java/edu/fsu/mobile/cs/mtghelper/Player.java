@@ -1,5 +1,6 @@
 package edu.fsu.mobile.cs.mtghelper;
 
+import android.content.Context;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -16,4 +17,8 @@ public class Player {
     public Button poisonUp;
     public Button lifegain;
     public Boolean gain = false;
+
+    public Player(Context c){
+        rl = new RelativeLayout(c);
+    }
 }

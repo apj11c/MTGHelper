@@ -2,6 +2,7 @@ package edu.fsu.mobile.cs.mtghelper;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -21,12 +22,19 @@ public class CommanderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_commander);
-        p[0].rl = (RelativeLayout) findViewById(R.id.P1Frame);
+        Log.e("bug","started");
+        p[0] = new Player(this);
+        Log.e("bug","p[0] initiated");
+        p[0].rl = findViewById(R.id.P1Frame);
+        Log.e("bug","rl assigned");
+        //        p[0].rl = (RelativeLayout) findViewById(R.id.P1Frame);
        // p[1].rl = (RelativeLayout) findViewById(R.id.P2Frame);
 
         // set up turnStates
         currentTurn = new turnState(playerCount,40);
-        turnLog.add(currentTurn);
+        Log.e("bug","currentTurn created");
+       // turnLog.add(currentTurn);
+       // Log.e("bug","currentTurn added to turnLog");
 
         for(int i = 0; i <1; i++) { // change the 1 to 6 after adding in all the frames
             final int x = i; // this is a final version of i to be used in onClickListeners
