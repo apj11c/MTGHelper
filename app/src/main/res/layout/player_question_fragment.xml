@@ -16,8 +16,10 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="37dp"
         android:shadowColor="#FF0000"
         android:shadowDx="2"
         android:shadowDy="2"
@@ -26,17 +28,16 @@
         android:textAllCaps="true"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textColor="#ecba4f"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:fontFamily="@font/almendra_sc" />
 
     <Spinner
         android:id="@+id/numPlayersSpinner"
         android:layout_width="wrap_content"
-        android:layout_height="41dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="120dp"
+        android:layout_height="34dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/startGameButton"
         android:background="#ebb94f"
         android:entries="@array/numplayers" />
 

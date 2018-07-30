@@ -42,16 +42,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.startGameButton:
                 numberOfPlayers = findViewById(R.id.numPlayersSpinner);
                 String players = numberOfPlayers.getSelectedItem().toString();
-                switch(players){
-                    case "2":
-                        Intent i = new Intent(this, CommanderActivity.class);
-                        startActivity(i);
-                        break;
-                    case"3":
-                        break;
-                    case"4":
-                        break;
-                }
+                Intent i = new Intent(this, CommanderActivity.class);
+                i.putExtra("players", players);
+                startActivity(i);
                 break;
         }
     }
