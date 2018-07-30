@@ -24,7 +24,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="490dp"
+            android:layout_marginBottom="450dp"
             android:text="Player 1"
             android:textColor="@color/colorAccent"
             android:textSize="25sp" />
@@ -148,6 +148,16 @@
         android:textSize="23sp" />
 
     <TextView
+        android:id="@+id/currentPhase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CurrentTurn"
+        android:layout_centerHorizontal="true"
+        android:text="Untap"
+        android:textColor="@color/colorAccent"
+        android:textSize="23sp" />
+
+    <TextView
         android:id="@+id/CurrentPlayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -158,10 +168,10 @@
         android:textSize="25sp" />
 
     <Button
-        android:id="@+id/NextTurnButton"
+        android:id="@+id/NextPhaseButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Next Turn" />
+        android:text="Next Phase" />
 </RelativeLayout>

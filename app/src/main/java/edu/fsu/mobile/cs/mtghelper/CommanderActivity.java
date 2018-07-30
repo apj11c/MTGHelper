@@ -12,11 +12,14 @@ import java.util.ArrayList;
 
 public class CommanderActivity extends AppCompatActivity {
     private int playerCount = 4; // Set this through an intent
-
     private turnState currentTurn;
     private ArrayList<turnState> turnLog;
     private Player p[] = new Player[6];
 
+    private int turn = 1;
+    private int phase = 1;
+    private Button nextPhase;
+    private TextView currentPhase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,5 +124,17 @@ public class CommanderActivity extends AppCompatActivity {
                 }
             });
         }
+        nextPhase = findViewById(R.id.NextPhaseButton);
+        nextPhase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                phase++;
+                if(phase > 7){
+                    phase = 1;
+                    turn++; // this doesn't keep track of whose turn it is.
+                }
+
+            }
+        });
     }
 }
