@@ -12,7 +12,6 @@
         android:id="@+id/P1Frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:paddingLeft="5dp">
@@ -25,9 +24,13 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="450dp"
+            android:shadowColor="#FF0000"
+            android:shadowDx="2"
+            android:shadowDy="2"
             android:text="Player 1"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
+            android:textColor="#ecba4f"
+            android:textSize="25sp"
+            app:fontFamily="@font/almendra_sc" />
 
         <Button
             android:id="@+id/toggle_gain"
@@ -44,35 +47,30 @@
             android:id="@+id/HealthLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/Player"
-            android:layout_alignTop="@+id/Player"
-            android:layout_below="@+id/Player"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="45dp"
-            android:text="Health:40"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
+            android:layout_alignEnd="@+id/Player"
+            android:layout_below="@+id/toggle_gain"
+            android:shadowColor="#FF0000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:text="40"
+            android:textColor="#ecba4f"
+            android:textSize="25sp"
+            app:fontFamily="@font/almendra_sc" />
 
         <Button
             android:id="@+id/health-1"
-            android:layout_width="wrap_content"
+            android:layout_width="44dp"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/HealthLabel"
-            android:layout_alignTop="@+id/HealthLabel"
-            android:layout_marginLeft="110dp"
-            android:layout_marginRight="-45dp"
-            android:layout_marginTop="0dp"
+            android:layout_alignStart="@+id/toggle_gain"
+            android:layout_below="@+id/toggle_gain"
             android:text="-1" />
 
         <Button
             android:id="@+id/health-10"
-            android:layout_width="wrap_content"
+            android:layout_width="46dp"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/HealthLabel"
-            android:layout_alignTop="@+id/HealthLabel"
-            android:layout_marginLeft="150dp"
-            android:layout_marginRight="-90dp"
-            android:layout_marginTop="0dp"
+            android:layout_alignEnd="@+id/toggle_gain"
+            android:layout_below="@+id/toggle_gain"
             android:text="-10" />
 
         <TextView
@@ -84,30 +82,31 @@
             android:layout_below="@+id/HealthLabel"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="45dp"
-            android:text="Energy:0"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
+            android:shadowColor="#FF0000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:text="0"
+            android:textColor="#ecba4f"
+            android:textSize="25sp"
+            app:fontFamily="@font/almendra_sc" />
 
         <Button
             android:id="@+id/energyDown"
-            android:layout_width="wrap_content"
+            android:layout_width="46dp"
             android:layout_height="wrap_content"
             android:layout_alignRight="@+id/EnergyLabel"
             android:layout_alignTop="@+id/EnergyLabel"
             android:layout_marginLeft="110dp"
-            android:layout_marginRight="-55dp"
+            android:layout_marginRight="-81dp"
             android:layout_marginTop="0dp"
             android:text="-1" />
 
         <Button
             android:id="@+id/energyUp"
-            android:layout_width="wrap_content"
+            android:layout_width="46dp"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/EnergyLabel"
+            android:layout_alignEnd="@+id/toggle_gain"
             android:layout_alignTop="@+id/EnergyLabel"
-            android:layout_marginLeft="150dp"
-            android:layout_marginRight="-100dp"
-            android:layout_marginTop="0dp"
             android:text="+1" />
 
         <TextView
@@ -119,20 +118,49 @@
             android:layout_below="@+id/EnergyLabel"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="45dp"
-            android:text="Poison:0"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
+            android:shadowColor="#FF0000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:text="0"
+            android:textColor="#ecba4f"
+            android:textSize="25sp"
+            app:fontFamily="@font/almendra_sc" />
 
         <Button
             android:id="@+id/poisonUp"
-            android:layout_width="wrap_content"
+            android:layout_width="88dp"
             android:layout_height="wrap_content"
             android:layout_alignRight="@+id/PoisonLabel"
             android:layout_alignTop="@+id/PoisonLabel"
             android:layout_marginLeft="110dp"
-            android:layout_marginRight="-60dp"
+            android:layout_marginRight="-123dp"
             android:layout_marginTop="0dp"
             android:text="+1" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="29dp"
+            android:layout_height="33dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/toggle_gain"
+            android:layout_marginStart="18dp"
+            app:srcCompat="@drawable/heart_with_white_border_th" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="30dp"
+            android:layout_height="32dp"
+            android:layout_alignStart="@+id/imageView2"
+            android:layout_below="@+id/health-1"
+            app:srcCompat="@drawable/magic_energy" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="33dp"
+            android:layout_height="35dp"
+            android:layout_alignStart="@+id/imageView2"
+            android:layout_below="@+id/energyDown"
+            app:srcCompat="@drawable/poison_counter" />
 
 
     </RelativeLayout>
@@ -144,7 +172,11 @@
         android:layout_below="@+id/CurrentPlayer"
         android:layout_centerHorizontal="true"
         android:text="Turn 1"
-        android:textColor="@color/colorAccent"
+        android:shadowColor="#FF0000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:textColor="#ecba4f"
+        app:fontFamily="@font/almendra_sc"
         android:textSize="23sp" />
 
     <TextView
@@ -153,9 +185,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/CurrentTurn"
         android:layout_centerHorizontal="true"
+        android:shadowColor="#FF0000"
+        android:shadowDx="2"
+        android:shadowDy="2"
         android:text="Untap"
-        android:textColor="@color/colorAccent"
-        android:textSize="23sp" />
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="23sp"
+        app:fontFamily="@font/almendra_sc" />
 
     <TextView
         android:id="@+id/CurrentPlayer"
@@ -164,7 +200,11 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="Player 1"
-        android:textColor="@color/colorAccent"
+        android:shadowColor="#FF0000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:textColor="#ecba4f"
+        app:fontFamily="@font/almendra_sc"
         android:textSize="25sp" />
 
     <Button
