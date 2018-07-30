@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/background_dark"
-    tools:context=".CommanderActivity">
+    tools:context=".CommanderActivity"
+    android:layout_weight="2">
 
     <RelativeLayout
         android:id="@+id/P1Frame"
@@ -88,7 +89,7 @@
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/energy-1"
+            android:id="@+id/energyDown"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignRight="@+id/EnergyLabel"
@@ -99,7 +100,7 @@
             android:text="-1" />
 
         <Button
-            android:id="@+id/energy+1"
+            android:id="@+id/energyUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignRight="@+id/EnergyLabel"
@@ -123,7 +124,7 @@
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/poison+1"
+            android:id="@+id/poisonUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignRight="@+id/PoisonLabel"
