@@ -175,7 +175,6 @@
             android:layout_height="32dp"
             android:layout_alignStart="@+id/HeartIcon"
             android:layout_below="@+id/health-1"
-
             app:srcCompat="@drawable/magic_energy"
             android:layout_alignLeft="@+id/HeartIcon" />
 
