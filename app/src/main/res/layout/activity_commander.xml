@@ -12,10 +12,9 @@
         android:id="@+id/P1Frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:paddingLeft="5dp"
-        android:layout_alignParentLeft="true">
+        android:paddingLeft="5dp">
 
         <TextView
             android:id="@+id/Player"
@@ -25,6 +24,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="450dp"
+            android:layout_marginLeft="0dp"
             android:shadowColor="#FF0000"
             android:shadowDx="2"
             android:shadowDy="2"
@@ -51,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/Player"
+            android:layout_alignRight="@+id/Player"
             android:layout_below="@+id/toggle_gain"
             android:shadowColor="#FF0000"
             android:shadowDx="2"
@@ -59,30 +60,29 @@
             android:textColor="#ecba4f"
             android:textSize="25sp"
             android:textStyle="bold"
-            app:fontFamily="@font/almendra_sc"
-            android:layout_alignRight="@+id/Player" />
+            app:fontFamily="@font/almendra_sc" />
 
         <Button
             android:id="@+id/health-1"
             android:layout_width="47dp"
             android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/toggle_gain"
             android:layout_alignStart="@+id/toggle_gain"
             android:layout_below="@+id/toggle_gain"
             android:text="-1"
             android:textSize="10sp"
-            android:textStyle="bold"
-            android:layout_alignLeft="@+id/toggle_gain" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/health-10"
             android:layout_width="46dp"
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/toggle_gain"
+            android:layout_alignRight="@+id/toggle_gain"
             android:layout_below="@+id/toggle_gain"
             android:text="-10"
             android:textSize="10sp"
-            android:textStyle="bold"
-            android:layout_alignRight="@+id/toggle_gain" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/EnergyLabel"
@@ -120,11 +120,11 @@
             android:layout_width="46dp"
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/toggle_gain"
+            android:layout_alignRight="@+id/toggle_gain"
             android:layout_alignTop="@+id/EnergyLabel"
             android:text="+1"
             android:textSize="10sp"
-            android:textStyle="bold"
-            android:layout_alignRight="@+id/toggle_gain" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/PoisonLabel"
@@ -162,30 +162,29 @@
             android:layout_width="29dp"
             android:layout_height="33dp"
             android:layout_alignLeft="@+id/Player"
-            android:layout_alignParentStart="true"
             android:layout_below="@+id/toggle_gain"
             android:layout_marginLeft="0dp"
             android:layout_marginStart="18dp"
-            app:srcCompat="@drawable/heart_with_white_border_th"
-            android:layout_alignParentLeft="true" />
+            app:srcCompat="@drawable/heart_with_white_border_th" />
 
         <ImageView
             android:id="@+id/EnergyIcon"
             android:layout_width="30dp"
             android:layout_height="32dp"
-            android:layout_alignStart="@+id/HeartIcon"
-            android:layout_below="@+id/health-1"
-            app:srcCompat="@drawable/magic_energy"
-            android:layout_alignLeft="@+id/HeartIcon" />
+            android:layout_alignLeft="@+id/HeartIcon"
+            android:layout_below="@+id/HeartIcon"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@drawable/magic_energy" />
 
         <ImageView
             android:id="@+id/PoisonIcon"
             android:layout_width="33dp"
             android:layout_height="35dp"
+            android:layout_alignLeft="@+id/HeartIcon"
             android:layout_alignStart="@+id/HeartIcon"
             android:layout_below="@+id/energyDown"
-            app:srcCompat="@drawable/poison_counter"
-            android:layout_alignLeft="@+id/HeartIcon" />
+            app:srcCompat="@drawable/poison_counter" />
 
 
     </RelativeLayout>
