@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class CommanderActivity extends AppCompatActivity {
-    private int playerCount = 4; // Set this through an intent
+    private int playerCount;
     private turnState currentTurn;
     private ArrayList<turnState> turnLog;
     private Player p[] = new Player[6];
@@ -29,6 +29,16 @@ public class CommanderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_commander);
+        String tempCount = getIntent().getStringExtra("players");
+        if (tempCount == "2") {
+            playerCount = 2;
+        }
+        else if (tempCount == "3") {
+            playerCount = 3;
+        }
+        else {
+            playerCount = 4;
+        }
         p[0] = new Player(this);
         p[0].rl = findViewById(R.id.P1Frame);
         //        p[0].rl = (RelativeLayout) findViewById(R.id.P1Frame);
