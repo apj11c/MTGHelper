@@ -7,6 +7,135 @@
     android:background="@android:color/background_dark"
     tools:context=".CommanderActivity">
 
+    <RelativeLayout
+        android:id="@+id/P1Frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="5dp">
+
+        <TextView
+            android:id="@+id/Player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="490dp"
+            android:text="Player 1"
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/toggle_gain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/Player"
+            android:layout_alignTop="@+id/Player"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="-110dp"
+            android:layout_marginTop="0dp"
+            android:text="Life Gain" />
+
+        <TextView
+            android:id="@+id/HealthLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/Player"
+            android:layout_alignTop="@+id/Player"
+            android:layout_below="@+id/Player"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="45dp"
+            android:text="Health:40"
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/health-1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/HealthLabel"
+            android:layout_alignTop="@+id/HealthLabel"
+            android:layout_marginLeft="110dp"
+            android:layout_marginRight="-45dp"
+            android:layout_marginTop="0dp"
+            android:text="-1" />
+
+        <Button
+            android:id="@+id/health-10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/HealthLabel"
+            android:layout_alignTop="@+id/HealthLabel"
+            android:layout_marginLeft="150dp"
+            android:layout_marginRight="-90dp"
+            android:layout_marginTop="0dp"
+            android:text="-10" />
+
+        <TextView
+            android:id="@+id/EnergyLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/HealthLabel"
+            android:layout_alignTop="@+id/HealthLabel"
+            android:layout_below="@+id/HealthLabel"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="45dp"
+            android:text="Energy:0"
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/energy-1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/EnergyLabel"
+            android:layout_alignTop="@+id/EnergyLabel"
+            android:layout_marginLeft="110dp"
+            android:layout_marginRight="-55dp"
+            android:layout_marginTop="0dp"
+            android:text="-1" />
+
+        <Button
+            android:id="@+id/energy+1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/EnergyLabel"
+            android:layout_alignTop="@+id/EnergyLabel"
+            android:layout_marginLeft="150dp"
+            android:layout_marginRight="-100dp"
+            android:layout_marginTop="0dp"
+            android:text="+1" />
+
+        <TextView
+            android:id="@+id/PoisonLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/EnergyLabel"
+            android:layout_alignTop="@+id/EnergyLabel"
+            android:layout_below="@+id/EnergyLabel"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="45dp"
+            android:text="Poison:0"
+            android:textColor="@color/colorAccent"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/poison+1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/PoisonLabel"
+            android:layout_alignTop="@+id/PoisonLabel"
+            android:layout_marginLeft="110dp"
+            android:layout_marginRight="-60dp"
+            android:layout_marginTop="0dp"
+            android:text="+1" />
+
+
+    </RelativeLayout>
+
     <TextView
         android:id="@+id/CurrentTurn"
         android:layout_width="wrap_content"
@@ -18,251 +147,6 @@
         android:textSize="23sp" />
 
     <TextView
-        android:id="@+id/Player6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/Player5"
-        android:text="P6"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P6HealthLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/Player5"
-        android:layout_marginTop="-148dp"
-        android:text="H#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P6EnergyLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/P5HealthLabel"
-        android:text="E#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P6PoisonLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/NextTurnButton"
-        android:layout_alignParentEnd="true"
-        android:text="|#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/Player5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="148dp"
-        android:text="P5"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P5HealthLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/Player5"
-        android:layout_marginTop="-148dp"
-        android:text="H#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P5EnergyLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/P5HealthLabel"
-        android:text="E#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P5PoisonLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/P5EnergyLabel"
-        android:text="|#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/Player4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/Phase3"
-        android:text="P4"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P4HealthLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/P3EnergyLabel"
-        android:layout_alignParentEnd="true"
-        android:text="H#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P4EnergyLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_centerVertical="true"
-        android:text="E#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P4PoisonLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/Phase5"
-        android:text="I#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/Player3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/Phase3"
-        android:text="P3"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P3HealthLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/Player3"
-        android:text="H#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P3EnergyLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:text="E#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P3PoisonLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/Phase5"
-        android:text="I#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/Player2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/Phase1"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="-73dp"
-        android:text="P2"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P2HealthLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/Phase1"
-        android:text="H#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P2EnergyLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/P1HealthLabel"
-        android:text="E#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P2PoisonLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/P1EnergyLabel"
-        android:text="I#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/Player1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/Phase1"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="-73dp"
-        android:text="P1"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P1HealthLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/Phase1"
-        android:text="H#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P1EnergyLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/P1HealthLabel"
-        android:text="E#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/P1PoisonLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/P1EnergyLabel"
-        android:text="I#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
         android:id="@+id/CurrentPlayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -271,77 +155,6 @@
         android:text="Player 1"
         android:textColor="@color/colorAccent"
         android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/Phase2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Phase1"
-        android:layout_centerHorizontal="true"
-        android:text="Phase 2"
-        android:textColor="@color/colorAccent"
-        android:textSize="35sp" />
-
-    <TextView
-        android:id="@+id/Phase3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Phase2"
-        android:layout_centerHorizontal="true"
-        android:text="Phase 3"
-        android:textColor="@color/colorAccent"
-        android:textSize="35sp" />
-
-    <TextView
-        android:id="@+id/Phase4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Phase3"
-        android:layout_centerHorizontal="true"
-        android:text="Phase 4"
-        android:textColor="@color/colorAccent"
-        android:textSize="35sp" />
-
-    <TextView
-        android:id="@+id/Phase5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Phase4"
-        android:layout_centerHorizontal="true"
-        android:text="Phase 5"
-        android:textColor="@color/colorAccent"
-        android:textSize="35sp" />
-
-    <TextView
-        android:id="@+id/Phase6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Phase5"
-        android:layout_centerHorizontal="true"
-        android:text="Phase 6"
-        android:textColor="@color/colorAccent"
-        android:textSize="35sp" />
-
-    <TextView
-        android:id="@+id/Phase1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="73dp"
-        android:text="Phase 1"
-        android:textColor="@color/colorAccent"
-        android:textSize="35sp" />
-
-    <TextView
-        android:id="@+id/Phase7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Phase6"
-        android:layout_centerHorizontal="true"
-        android:text="Phase 7"
-        android:textColor="@color/colorAccent"
-        android:textSize="35sp" />
 
     <Button
         android:id="@+id/NextTurnButton"

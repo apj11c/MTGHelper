@@ -5,673 +5,296 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/background_dark"
-    tools:context=".StandardActivity">
+    tools:context=".CommanderActivity">
+
+    <TextView
+        android:id="@+id/CurrentTurn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CurrentPlayer"
+        android:layout_centerHorizontal="true"
+        android:text="Turn 1"
+        android:textColor="@color/colorAccent"
+        android:textSize="23sp" />
 
     <RelativeLayout
+        android:id="@+id/P6Frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="@android:color/background_dark"
-        tools:context=".StandardActivity">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:background="@android:color/background_dark"
-            tools:context=".StandardActivity">
-
-            <TextView
-                android:id="@+id/textView26"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/textView27"
-                android:text="I#"
-                android:textColor="@color/colorAccent"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/textView27"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/textView14"
-                android:text="E#"
-                android:textColor="@color/colorAccent"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/textView28"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/textView14"
-                android:layout_alignParentStart="true"
-                android:text="H#"
-                android:textColor="@color/colorAccent"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/textView29"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="193dp"
-                android:text="P3"
-                android:textColor="@color/colorAccent"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_below="@+id/textView11"
-                android:text="I#"
-                android:textColor="@color/colorAccent"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/textView23"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_below="@+id/textView18"
-                android:text="E#"
-                android:textColor="@color/colorAccent"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/textView24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignTop="@+id/textView18"
-                android:text="H#"
-                android:textColor="@color/colorAccent"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/textView25"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/textView18"
-                android:layout_alignParentEnd="true"
-                android:layout_marginBottom="-59dp"
-                android:text="P2"
-                android:textColor="@color/colorAccent"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:text="Player 1"
-                android:textColor="@color/colorAccent"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/textView28"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="118dp"
-                android:text="Phase 1"
-                android:textColor="@color/colorAccent"
-                android:textSize="35sp" />
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textView11"
-                android:layout_centerHorizontal="true"
-                android:text="Phase 2"
-                android:textColor="@color/colorAccent"
-                android:textSize="35sp" />
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textView12"
-                android:layout_centerHorizontal="true"
-                android:text="Phase 3"
-                android:textColor="@color/colorAccent"
-                android:textSize="35sp" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textView13"
-                android:layout_centerHorizontal="true"
-                android:text="Phase 4"
-                android:textColor="@color/colorAccent"
-                android:textSize="35sp" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textView14"
-                android:layout_centerHorizontal="true"
-                android:text="Phase 5"
-                android:textColor="@color/colorAccent"
-                android:textSize="35sp" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginEnd="69dp"
-                android:layout_marginTop="204dp"
-                android:text="Phase 6"
-                android:textColor="@color/colorAccent"
-                android:textSize="35sp" />
-
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginEnd="69dp"
-                android:layout_marginTop="204dp"
-                android:text="Phase 7"
-                android:textColor="@color/colorAccent"
-                android:textSize="35sp" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:text="Done" />
-
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="59dp"
-                android:text="H#"
-                android:textColor="@color/colorAccent"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/textView19"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/textView18"
-                android:text="E#"
-                android:textColor="@color/colorAccent"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/textView11"
-                android:text="I#"
-                android:textColor="@color/colorAccent"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/textView21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/textView18"
-                android:layout_alignParentStart="true"
-                android:layout_marginBottom="-59dp"
-                android:text="P1"
-                android:textColor="@color/colorAccent"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/textView46"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/textView24"
-                android:layout_centerHorizontal="true"
-                android:text="Turn 1"
-                android:textColor="@color/colorAccent"
-                android:textSize="23sp" />
-
-        </RelativeLayout>
+        android:layout_alignParentLeft="true">
 
         <TextView
-            android:id="@+id/textView34"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView35"
-            android:text="I#"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView35"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView36"
-            android:text="E#"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView36"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView37"
-            android:text="H#"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView37"
+            android:id="@+id/Player6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_below="@+id/textView17"
+            android:layout_alignParentRight="true"
             android:text="P6"
             android:textColor="@color/colorAccent"
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/textView42"
+            android:id="@+id/P6HealthLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/textView34"
-            android:text="I#"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView43"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/textView34"
-            android:layout_alignParentEnd="true"
-            android:text="E#"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView44"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/textView35"
-            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/Player6"
+            android:layout_marginTop="-148dp"
             android:text="H#"
             android:textColor="@color/colorAccent"
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/textView45"
+            android:id="@+id/P6EnergyLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView17"
-            android:text="P5"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView26"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView27"
-            android:text="I#"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView27"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView14"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/P6HealthLabel"
             android:text="E#"
             android:textColor="@color/colorAccent"
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/textView28"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/textView14"
-            android:layout_alignParentStart="true"
-            android:text="H#"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView29"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="193dp"
-            android:text="P3"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView22"
+            android:id="@+id/P6PoisonLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_below="@+id/textView11"
-            android:text="I#"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/textView18"
-            android:text="E#"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView24"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/textView18"
-            android:text="H#"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView25"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/textView18"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="-59dp"
-            android:text="P2"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:text="Player 1"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="73dp"
-            android:text="Phase 1"
-            android:textColor="@color/colorAccent"
-            android:textSize="35sp" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView11"
-            android:layout_centerHorizontal="true"
-            android:text="Phase 2"
-            android:textColor="@color/colorAccent"
-            android:textSize="35sp" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView12"
-            android:layout_centerHorizontal="true"
-            android:text="Phase 3"
-            android:textColor="@color/colorAccent"
-            android:textSize="35sp" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView13"
-            android:layout_centerHorizontal="true"
-            android:text="Phase 4"
-            android:textColor="@color/colorAccent"
-            android:textSize="35sp" />
-
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView14"
-            android:layout_centerHorizontal="true"
-            android:text="Phase 5"
-            android:textColor="@color/colorAccent"
-            android:textSize="35sp" />
-
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView15"
-            android:layout_centerHorizontal="true"
-            android:text="Phase 6"
-            android:textColor="@color/colorAccent"
-            android:textSize="35sp" />
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView16"
-            android:layout_centerHorizontal="true"
-            android:text="Phase 7"
-            android:textColor="@color/colorAccent"
-            android:textSize="35sp" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:text="Done" />
-
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="59dp"
-            android:text="H#"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView19"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView18"
-            android:text="E#"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView11"
-            android:text="I#"
-            android:textColor="@color/colorAccent"
-            android:textSize="25sp" />
-
-        <TextView
-            android:id="@+id/textView21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/textView18"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="-59dp"
-            android:text="P1"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/P6EnergyLabel"
+            android:text="|#"
             android:textColor="@color/colorAccent"
             android:textSize="25sp" />
     </RelativeLayout>
-
     <TextView
-        android:id="@+id/textView30"
+        android:id="@+id/Player"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/textView26"
-        android:text="I#"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="148dp"
+        android:text="P5"
         android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:layout_alignParentLeft="true" />
 
     <TextView
-        android:id="@+id/textView31"
+        android:id="@+id/HealthLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/textView14"
-        android:text="E#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/textView32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView14"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Player"
+        android:layout_marginTop="-148dp"
         android:text="H#"
         android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:layout_alignParentLeft="true" />
 
     <TextView
-        android:id="@+id/textView33"
+        android:id="@+id/EnergyLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView28"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/HealthLabel"
+        android:text="E#"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/PoisonLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/EnergyLabel"
+        android:text="|#"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/Player4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+        android:layout_below="@+id/Phase3"
         android:text="P4"
         android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:layout_alignParentRight="true" />
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/P4HealthLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView27"
-        android:text="I#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView14"
-        android:text="E#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView14"
-        android:layout_alignParentStart="true"
+        android:layout_above="@+id/P3EnergyLabel"
+        android:layout_alignParentEnd="true"
         android:text="H#"
         android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:layout_alignParentRight="true" />
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/P4EnergyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:text="E#"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/P4PoisonLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/Phase5"
+        android:text="I#"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/Player3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="193dp"
+        android:layout_below="@+id/Phase3"
         android:text="P3"
         android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:layout_alignParentLeft="true" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/P3HealthLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/textView11"
-        android:text="I#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/textView18"
-        android:text="E#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/textView18"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Player3"
         android:text="H#"
         android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:layout_alignParentLeft="true" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/P3EnergyLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView18"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="-59dp"
-        android:text="P2"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:text="E#"
         android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
+        android:textSize="25sp"
+        android:layout_alignParentLeft="true" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/P3PoisonLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Phase5"
+        android:text="I#"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/Player2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Phase1"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="-73dp"
+        android:text="P2"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/P2HealthLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/Phase1"
+        android:text="H#"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/P2EnergyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/P1HealthLabel"
+        android:text="E#"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/P2PoisonLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/P1EnergyLabel"
+        android:text="I#"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/Player1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Phase1"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="-73dp"
+        android:text="P1"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/P1HealthLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/Phase1"
+        android:text="H#"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/P1EnergyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/P1HealthLabel"
+        android:text="E#"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/P1PoisonLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/P1EnergyLabel"
+        android:text="I#"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/CurrentPlayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -681,7 +304,57 @@
         android:textSize="25sp" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/Phase2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Phase1"
+        android:layout_centerHorizontal="true"
+        android:text="Phase 2"
+        android:textColor="@color/colorAccent"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/Phase3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Phase2"
+        android:layout_centerHorizontal="true"
+        android:text="Phase 3"
+        android:textColor="@color/colorAccent"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/Phase4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Phase3"
+        android:layout_centerHorizontal="true"
+        android:text="Phase 4"
+        android:textColor="@color/colorAccent"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/Phase5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Phase4"
+        android:layout_centerHorizontal="true"
+        android:text="Phase 5"
+        android:textColor="@color/colorAccent"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/Phase6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Phase5"
+        android:layout_centerHorizontal="true"
+        android:text="Phase 6"
+        android:textColor="@color/colorAccent"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/Phase1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -692,112 +365,20 @@
         android:textSize="35sp" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/Phase7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView11"
-        android:layout_centerHorizontal="true"
-        android:text="Phase 2"
-        android:textColor="@color/colorAccent"
-        android:textSize="35sp" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView12"
-        android:layout_centerHorizontal="true"
-        android:text="Phase 3"
-        android:textColor="@color/colorAccent"
-        android:textSize="35sp" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView13"
-        android:layout_centerHorizontal="true"
-        android:text="Phase 4"
-        android:textColor="@color/colorAccent"
-        android:textSize="35sp" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView14"
-        android:layout_centerHorizontal="true"
-        android:text="Phase 5"
-        android:textColor="@color/colorAccent"
-        android:textSize="35sp" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView15"
-        android:layout_centerHorizontal="true"
-        android:text="Phase 6"
-        android:textColor="@color/colorAccent"
-        android:textSize="35sp" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView16"
+        android:layout_below="@+id/Phase6"
         android:layout_centerHorizontal="true"
         android:text="Phase 7"
         android:textColor="@color/colorAccent"
         android:textSize="35sp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/NextTurnButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Done" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="59dp"
-        android:text="H#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView18"
-        android:text="E#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView11"
-        android:text="I#"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/textView18"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="-59dp"
-        android:text="P1"
-        android:textColor="@color/colorAccent"
-        android:textSize="25sp" />
+        android:text="Next Turn" />
 </RelativeLayout>
