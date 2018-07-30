@@ -1,5 +1,8 @@
 package edu.fsu.mobile.cs.mtghelper;
 
+import android.content.Context;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,19 +29,14 @@ public class CommanderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_commander);
-        Log.e("bug","started");
         p[0] = new Player(this);
-        Log.e("bug","p[0] initiated");
         p[0].rl = findViewById(R.id.P1Frame);
-        Log.e("bug","rl assigned");
         //        p[0].rl = (RelativeLayout) findViewById(R.id.P1Frame);
        // p[1].rl = (RelativeLayout) findViewById(R.id.P2Frame);
 
         // set up turnStates
         currentTurn = new turnState(playerCount,40);
-        Log.e("bug","currentTurn created");
        // turnLog.add(currentTurn);
-       // Log.e("bug","currentTurn added to turnLog");
 
         for(int i = 0; i <1; i++) { // change the 1 to 6 after adding in all the frames
             final int x = i; // this is a final version of i to be used in onClickListeners
@@ -52,12 +50,12 @@ public class CommanderActivity extends AppCompatActivity {
                     if(p[x].gain){
                         // Add the life
                         currentTurn.health[x]++;
-                        p[x].health.setText(currentTurn.health[x]);
+                        p[x].health.setText(""+currentTurn.health[x]);
                     }
                     else{
                         //subtract the life
                         currentTurn.health[x]--;
-                        p[x].health.setText(currentTurn.health[x]);
+                        p[x].health.setText("" +currentTurn.health[x]);
                         // check if player is dead
                     }
                 }
@@ -69,12 +67,12 @@ public class CommanderActivity extends AppCompatActivity {
                     if(p[x].gain){
                         // Add the life
                         currentTurn.health[x]+= 10;
-                        p[x].health.setText(currentTurn.health[x]);
+                        p[x].health.setText("" +currentTurn.health[x]);
                     }
                     else{
                         //subtract the life
                         currentTurn.health[x]-= 10;
-                        p[x].health.setText(currentTurn.health[x]);
+                        p[x].health.setText("" +currentTurn.health[x]);
                         // check if player is dead
                     }
                 }
@@ -84,7 +82,7 @@ public class CommanderActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     currentTurn.energy[x]++;
-                    p[x].energy.setText(currentTurn.energy[x]);
+                    p[x].energy.setText("" +currentTurn.energy[x]);
                 }
             });
             p[i].energyDown = (Button) p[i].rl.findViewById(R.id.energyDown);
@@ -92,7 +90,7 @@ public class CommanderActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     currentTurn.energy[x]--;
-                    p[x].energy.setText(currentTurn.energy[x]);
+                    p[x].energy.setText("" + currentTurn.energy[x]);
                 }
             });
             p[i].poisonUp = (Button) p[i].rl.findViewById(R.id.poisonUp);
@@ -100,7 +98,7 @@ public class CommanderActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     currentTurn.infect[x]++;
-                    p[x].poison.setText(currentTurn.infect[x]);
+                    p[x].poison.setText("" + currentTurn.infect[x]);
                     // add something to check if poison just killed this player.
                 }
             });
@@ -128,10 +126,51 @@ public class CommanderActivity extends AppCompatActivity {
 
         turnNum = findViewById(R.id.CurrentTurn);
         currentPhase = findViewById(R.id.currentPhase);
+        final Context c = this;
         currentPhase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // launch a dialog explaining the current phase
+                AlertDialog.Builder builder = new AlertDialog.Builder(c);
+                switch(phase){
+                    // **** Explanations need to be fleshed out ****
+                    case 1:
+                        builder.setTitle("Untap Phase Explanation");
+                        builder.setMessage("Untap phase");
+                        break;
+                    case 2:
+                        builder.setTitle("Upkeep Phase Explanation");
+                        builder.setMessage("Upkeep phase");
+                        break;
+                    case 3:
+                        builder.setTitle("Draw Phase Explanation");
+                        builder.setMessage("Draw Phase");
+                        break;
+                    case 4:
+                        builder.setTitle("Main Phase Explanation");
+                        builder.setMessage("Main Phase");
+                        break;
+                    case 5:
+                        builder.setTitle("Combat Phase Explanation");
+                        builder.setMessage("Combat Phase");
+                        break;
+                    case 6:
+                        builder.setTitle("Second Main Phase Explanation");
+                        builder.setMessage("Second Main Phase");
+                        break;
+                    case 7:
+                        builder.setTitle("End Phase Explanation");
+                        builder.setMessage("End Phase");
+                        break;
+                }
+
+                builder.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                builder.create().show();
             }
         });
 
