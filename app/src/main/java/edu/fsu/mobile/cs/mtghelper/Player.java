@@ -15,4 +15,5 @@ public class Player {
     public Button energyDown;
     public Button poisonUp;
     public Button lifegain;
+    public Boolean gain = false;
 }
