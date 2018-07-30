@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Spinner;
 
@@ -41,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.startGameButton:
                 numberOfPlayers = findViewById(R.id.numPlayersSpinner);
                 String players = numberOfPlayers.getSelectedItem().toString();
+                int test = 1;
+                if (test == 1){
+                    Log.i("MainActivity","Success");
+                }
                 switch(players){
                     case "2":
                         Intent i = new Intent(this, CommanderActivity.class);
