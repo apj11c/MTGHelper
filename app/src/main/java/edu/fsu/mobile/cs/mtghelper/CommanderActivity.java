@@ -116,7 +116,7 @@ public class CommanderActivity extends AppCompatActivity {
                     else{
                         // Turn on Life Gain Mode
                         p[x].gain = true;
-                        p[x].lifegain.setText("Normal Damage");
+                        p[x].lifegain.setText("Damage");
                         p[x].health10.setText("+10");
                         p[x].health1.setText("+1");
                     }
