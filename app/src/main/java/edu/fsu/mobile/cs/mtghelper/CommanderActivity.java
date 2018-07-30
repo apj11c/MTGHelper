@@ -20,6 +20,7 @@ public class CommanderActivity extends AppCompatActivity {
     private int phase = 1;
     private Button nextPhase;
     private TextView currentPhase;
+    private TextView turnNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +52,12 @@ public class CommanderActivity extends AppCompatActivity {
                     if(p[x].gain){
                         // Add the life
                         currentTurn.health[x]++;
-                        p[x].health.setText("Health:" + currentTurn.health[x]);
+                        p[x].health.setText(currentTurn.health[x]);
                     }
                     else{
                         //subtract the life
                         currentTurn.health[x]--;
-                        p[x].health.setText("Health:" + currentTurn.health[x]);
+                        p[x].health.setText(currentTurn.health[x]);
                         // check if player is dead
                     }
                 }
@@ -68,12 +69,12 @@ public class CommanderActivity extends AppCompatActivity {
                     if(p[x].gain){
                         // Add the life
                         currentTurn.health[x]+= 10;
-                        p[x].health.setText("Health:" + currentTurn.health[x]);
+                        p[x].health.setText(currentTurn.health[x]);
                     }
                     else{
                         //subtract the life
                         currentTurn.health[x]-= 10;
-                        p[x].health.setText("Health:" + currentTurn.health[x]);
+                        p[x].health.setText(currentTurn.health[x]);
                         // check if player is dead
                     }
                 }
@@ -83,7 +84,7 @@ public class CommanderActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     currentTurn.energy[x]++;
-                    p[x].energy.setText("Energy:"+currentTurn.energy[x]);
+                    p[x].energy.setText(currentTurn.energy[x]);
                 }
             });
             p[i].energyDown = (Button) p[i].rl.findViewById(R.id.energyDown);
@@ -91,7 +92,7 @@ public class CommanderActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     currentTurn.energy[x]--;
-                    p[x].energy.setText("Energy:"+currentTurn.energy[x]);
+                    p[x].energy.setText(currentTurn.energy[x]);
                 }
             });
             p[i].poisonUp = (Button) p[i].rl.findViewById(R.id.poisonUp);
@@ -99,7 +100,7 @@ public class CommanderActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     currentTurn.infect[x]++;
-                    p[x].poison.setText("Poison:" + currentTurn.infect[x]);
+                    p[x].poison.setText(currentTurn.infect[x]);
                     // add something to check if poison just killed this player.
                 }
             });
@@ -124,6 +125,16 @@ public class CommanderActivity extends AppCompatActivity {
                 }
             });
         }
+
+        turnNum = findViewById(R.id.CurrentTurn);
+        currentPhase = findViewById(R.id.currentPhase);
+        currentPhase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // launch a dialog explaining the current phase
+            }
+        });
+
         nextPhase = findViewById(R.id.NextPhaseButton);
         nextPhase.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,9 +143,35 @@ public class CommanderActivity extends AppCompatActivity {
                 if(phase > 7){
                     phase = 1;
                     turn++; // this doesn't keep track of whose turn it is.
+                    turnNum.setText("Turn " + turn);
                 }
-
+                String phasename= "";
+                switch (phase){
+                    case 1:
+                        phasename = "Untap";
+                        break;
+                    case 2:
+                        phasename = "Upkeep";
+                        break;
+                    case 3:
+                        phasename = "Draw";
+                        break;
+                    case 4:
+                        phasename = "Main";
+                        break;
+                    case 5:
+                        phasename = "Combat";
+                        break;
+                    case 6:
+                        phasename = "Second Main";
+                        break;
+                    case 7:
+                        phasename = "End";
+                        break;
+                }
+                currentPhase.setText(phasename);
             }
         });
+
     }
 }
