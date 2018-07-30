@@ -1,12 +1,16 @@
 package edu.fsu.mobile.cs.mtghelper;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
+
+    Spinner numberOfPlayers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,20 @@ public class MainActivity extends AppCompatActivity {
                 FragmentTransaction playTransaction2 = getSupportFragmentManager().beginTransaction();
                 playTransaction2.replace(R.id.playerFragment, playerQuestion2);
                 playTransaction2.commit();
+                break;
+            case R.id.startGameButton:
+                numberOfPlayers = findViewById(R.id.numPlayersSpinner);
+                String players = numberOfPlayers.getSelectedItem().toString();
+                switch(players){
+                    case "2":
+                        Intent i = new Intent(this, CommanderActivity.class);
+                        startActivity(i);
+                        break;
+                    case"3":
+                        break;
+                    case"4":
+                        break;
+                }
                 break;
         }
     }

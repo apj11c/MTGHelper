@@ -4,4 +4,10 @@
     <string name="chooseastyle">Choose A Style</string>
     <string name="commander">Commander</string>
     <string name="standard">Standard</string>
+    <string-array name="numplayers">
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string name="startgame">Start Game</string>
 </resources>
