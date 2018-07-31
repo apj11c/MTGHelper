@@ -230,13 +230,7 @@ public class CommanderActivity extends AppCompatActivity {
                     phase = 1;
                     turn++; // this doesn't keep track of whose turn it is.
                     currentTurn.turnNum++;
-                    turnState old = new turnState(playerCount,40);
-                    old =currentTurn;
-                    //*********************************************************************
-                    old.turnNum--;
-                    Log.e("log test", "Old turn num = " + old.turnNum + " and current turn num = " + currentTurn.turnNum);
-                    old.turnNum++;
-                    // ******************************************************************
+                    turnState old = new turnState(currentTurn);
                     turnLog.add(old);
                     turnNum.setText("Turn " + turn);
                     activePlayer++;

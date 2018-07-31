@@ -21,4 +21,5 @@ public class Player {
     public Player(Context c){
         rl = new RelativeLayout(c);
     }
+
 }
