@@ -81,7 +81,7 @@ public class CommanderActivity extends AppCompatActivity {
         // set up turnStates
         currentTurn = new turnState(playerCount, healthNumber);
         turnLog = new ArrayList<turnState>();
-        turnLog.add(currentTurn);
+        turnLog.add(new turnState(currentTurn));
         currentPlayer = findViewById(R.id.CurrentPlayer);
 
         for(int i = 0; i <4; i++) { // change the 1 to 6 after adding in all the frames
