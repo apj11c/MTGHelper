@@ -63,7 +63,8 @@ public class CommanderActivity extends AppCompatActivity {
 
         // set up turnStates
         currentTurn = new turnState(playerCount,40);
-       // turnLog.add(currentTurn);
+        turnLog = new ArrayList<turnState>();
+        turnLog.add(currentTurn);
 
         for(int i = 0; i <4; i++) { // change the 1 to 6 after adding in all the frames
             final int x = i; // this is a final version of i to be used in onClickListeners
@@ -209,6 +210,7 @@ public class CommanderActivity extends AppCompatActivity {
                 if(phase > 7){
                     phase = 1;
                     turn++; // this doesn't keep track of whose turn it is.
+                    turnLog.add(currentTurn);
                     turnNum.setText("Turn " + turn);
                 }
                 String phasename= "";
