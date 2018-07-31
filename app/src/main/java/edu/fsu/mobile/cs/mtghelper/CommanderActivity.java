@@ -35,6 +35,18 @@ public class CommanderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_commander);
         String tempCount = getIntent().getStringExtra("players");
+        //determine whether commander or standard, difference is the starting health
+        String format = getIntent().getStringExtra("flag");
+        String health;
+        int healthNumber;
+        if (format.equals("0")) {
+            health = "40";
+            healthNumber = 40;
+        }
+        else {
+            health = "20";
+            healthNumber = 20;
+        }
         history = findViewById(R.id.logBtton);
         if (tempCount.equals("2")) {
             playerCount = 2;
@@ -67,7 +79,7 @@ public class CommanderActivity extends AppCompatActivity {
        // p[1].rl = (RelativeLayout) findViewById(R.id.P2Frame);
 
         // set up turnStates
-        currentTurn = new turnState(playerCount,40);
+        currentTurn = new turnState(playerCount, healthNumber);
         turnLog = new ArrayList<turnState>();
         turnLog.add(currentTurn);
         currentPlayer = findViewById(R.id.CurrentPlayer);
@@ -78,6 +90,7 @@ public class CommanderActivity extends AppCompatActivity {
             p[i].energy = (TextView) p[i].rl.findViewById(R.id.EnergyLabel);
             p[i].poison = (TextView) p[i].rl.findViewById(R.id.PoisonLabel);
             p[i].health1 = (Button) p[i].rl.findViewById(R.id.health_1);
+            p[i].health.setText(health);
             p[i].health1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -274,9 +287,9 @@ public class CommanderActivity extends AppCompatActivity {
                     {
                         int realPlayerNumber = player + 1;
                         message = message + "\n" + "Player: " + realPlayerNumber;
-                        message = message + "\n" + "Life: " + turnLog.get(i).health[player];
-                        message = message + "\n" + "Energy: " + turnLog.get(i).energy[player];
-                        message = message + "\n" + "Poison: " + turnLog.get(i).infect[player];
+                        message = message + "\n" + "\t\t" +"Life: " + turnLog.get(i).health[player];
+                        message = message + "\n" + "\t\t" + "Energy: " + turnLog.get(i).energy[player];
+                        message = message + "\n" + "\t\t" + "Poison: " + turnLog.get(i).infect[player];
                     }
                 }
 
