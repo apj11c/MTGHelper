@@ -30,11 +30,11 @@ public class CommanderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_commander);
         String tempCount = getIntent().getStringExtra("players");
-        String flag = getIntent().getStringExtra("flag");
-        if (tempCount == "2") {
+        Log.e("playercount","tempCount = " + tempCount);
+        if (tempCount.equals("2")) {
             playerCount = 2;
         }
-        else if (tempCount == "3") {
+        else if (tempCount.equals("3")) {
             playerCount = 3;
         }
         else {
@@ -42,14 +42,31 @@ public class CommanderActivity extends AppCompatActivity {
         }
         p[0] = new Player(this);
         p[0].rl = findViewById(R.id.P1Frame);
+
+        p[1] = new Player(this);
+        p[1].rl = findViewById(R.id.P2Frame);
+
+        p[2] = new Player(this);
+        p[2].rl = findViewById(R.id.P3Frame);
+
+        Log.e("playercount test", "playercount = " + playerCount);
+        p[3] = new Player(this);
+        p[3].rl = findViewById(R.id.P4Frame);
+        if(playerCount < 4){
+            p[3].rl.setVisibility(View.INVISIBLE);
+            if(playerCount < 3){
+                p[2].rl.setVisibility(View.INVISIBLE);
+            }
+        }
         //        p[0].rl = (RelativeLayout) findViewById(R.id.P1Frame);
        // p[1].rl = (RelativeLayout) findViewById(R.id.P2Frame);
 
         // set up turnStates
         currentTurn = new turnState(playerCount,40);
-       // turnLog.add(currentTurn);
+        turnLog = new ArrayList<turnState>();
+        turnLog.add(currentTurn);
 
-        for(int i = 0; i <1; i++) { // change the 1 to 6 after adding in all the frames
+        for(int i = 0; i <4; i++) { // change the 1 to 6 after adding in all the frames
             final int x = i; // this is a final version of i to be used in onClickListeners
             p[i].health = (TextView) p[i].rl.findViewById(R.id.HealthLabel);
             p[i].energy = (TextView) p[i].rl.findViewById(R.id.EnergyLabel);
@@ -193,6 +210,7 @@ public class CommanderActivity extends AppCompatActivity {
                 if(phase > 7){
                     phase = 1;
                     turn++; // this doesn't keep track of whose turn it is.
+                    turnLog.add(currentTurn);
                     turnNum.setText("Turn " + turn);
                 }
                 String phasename= "";
