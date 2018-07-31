@@ -6,16 +6,19 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CommanderActivity extends AppCompatActivity {
     private int playerCount;
     private turnState currentTurn;
+    private TextView currentPlayer;
     private ArrayList<turnState> turnLog;
     private Player p[] = new Player[6];
 
@@ -24,12 +27,15 @@ public class CommanderActivity extends AppCompatActivity {
     private Button nextPhase;
     private TextView currentPhase;
     private TextView turnNum;
+    private Button history;
+    private int activePlayer = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_commander);
         String tempCount = getIntent().getStringExtra("players");
+        history = findViewById(R.id.logBtton);
         if (tempCount.equals("2")) {
             playerCount = 2;
         }
@@ -64,6 +70,7 @@ public class CommanderActivity extends AppCompatActivity {
         currentTurn = new turnState(playerCount,40);
         turnLog = new ArrayList<turnState>();
         turnLog.add(currentTurn);
+        currentPlayer = findViewById(R.id.CurrentPlayer);
 
         for(int i = 0; i <4; i++) { // change the 1 to 6 after adding in all the frames
             final int x = i; // this is a final version of i to be used in onClickListeners
@@ -209,8 +216,19 @@ public class CommanderActivity extends AppCompatActivity {
                 if(phase > 7){
                     phase = 1;
                     turn++; // this doesn't keep track of whose turn it is.
-                    turnLog.add(currentTurn);
+                    currentTurn.turnNum++;
+                    turnState old = new turnState(playerCount,40);
+                    old =currentTurn;
+                    //*********************************************************************
+                    old.turnNum--;
+                    Log.e("log test", "Old turn num = " + old.turnNum + " and current turn num = " + currentTurn.turnNum);
+                    old.turnNum++;
+                    // ******************************************************************
+                    turnLog.add(old);
                     turnNum.setText("Turn " + turn);
+                    activePlayer++;
+                    if(activePlayer >= playerCount){activePlayer = 0;}
+                    currentPlayer.setText("Player: " + (activePlayer + 1));
                 }
                 String phasename= "";
                 switch (phase){
@@ -237,6 +255,43 @@ public class CommanderActivity extends AppCompatActivity {
                         break;
                 }
                 currentPhase.setText(phasename);
+            }
+        });
+
+        final Context c2 = this;
+
+        history.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //for setting the log information alert dialog
+                String message = "";
+                for (int i = 0; i < turn; i++){
+                    message = message + "\n" + "*************************";
+                    message = message + "\n" + "Turn: " + i;
+                    message = message + "\n" + "*************************";
+                    for(int player = 0; player < playerCount; player++)
+                    {
+                        int realPlayerNumber = player + 1;
+                        message = message + "\n" + "Player: " + realPlayerNumber;
+                        message = message + "\n" + "Life: " + turnLog.get(i).health[player];
+                        message = message + "\n" + "Energy: " + turnLog.get(i).energy[player];
+                        message = message + "\n" + "Poison: " + turnLog.get(i).infect[player];
+                    }
+                }
+
+                LayoutInflater inflater= LayoutInflater.from(c2);
+                View view=inflater.inflate(R.layout.log_layout, null);
+
+                TextView textview=(TextView)view.findViewById(R.id.textmsg);
+                textview.setText(message);
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(c2);
+                alertDialog.setTitle("History");
+                //alertDialog.setMessage("Here is a really long message.");
+                alertDialog.setView(view);
+                AlertDialog alert = alertDialog.create();
+                alert.show();
+
             }
         });
 

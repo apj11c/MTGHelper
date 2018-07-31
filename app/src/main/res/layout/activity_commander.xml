@@ -727,6 +727,15 @@
             android:layout_below="@+id/energyDown"
             app:srcCompat="@drawable/poison_counter" />
 
+        <Button
+            android:id="@+id/logBtton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:text="History"
+            android:textStyle="bold" />
+
 
     </RelativeLayout>
 
