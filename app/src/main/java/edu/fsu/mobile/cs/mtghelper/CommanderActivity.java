@@ -163,31 +163,31 @@ public class CommanderActivity extends AppCompatActivity {
                     // **** Explanations need to be fleshed out ****
                     case 1:
                         builder.setTitle("Untap Phase Explanation");
-                        builder.setMessage("Untap phase");
+                        builder.setMessage("The active player untaps all permanents they control. (A card is 'tapped' when it is rotated on its side. To untap it, turn it back.)");
                         break;
                     case 2:
                         builder.setTitle("Upkeep Phase Explanation");
-                        builder.setMessage("Upkeep phase");
+                        builder.setMessage("This is when all abilities triggered during the untap step happen. This includes upkeep costs.");
                         break;
                     case 3:
                         builder.setTitle("Draw Phase Explanation");
-                        builder.setMessage("Draw Phase");
+                        builder.setMessage("The active player draws a card from their library. ('Library' is MTG speak for your deck)");
                         break;
                     case 4:
                         builder.setTitle("Main Phase Explanation");
-                        builder.setMessage("Main Phase");
+                        builder.setMessage("Your main phase is the only time you can cast non-instant spells. You get two main phases; one before Combat and one after Combat.");
                         break;
                     case 5:
                         builder.setTitle("Combat Phase Explanation");
-                        builder.setMessage("Combat Phase");
+                        builder.setMessage("Combat multiple steps. First, the active player declares which of their creatures will be attacking, and what each of those creatures is attacking. Creatures may attack an enemy player or an enemy Planeswalker. Then, any players that are being attacked / that have Planeswalkers that are being attacked declare which of their creatures will be blocking, and which specific attacking creature they're blocking. Each defender can only block one attacker, but multiple defenders can block the same attacker. Then, deal damage. If an attacker wasn't blocked, it deals its damage to the declared target. If it was blocked, the attacker and its blocker(s) deal damage to each other.");
                         break;
                     case 6:
                         builder.setTitle("Second Main Phase Explanation");
-                        builder.setMessage("Second Main Phase");
+                        builder.setMessage("Your main phase is the only time you can cast non-instant spells. You get two main phases; one before Combat and one after Combat.");
                         break;
                     case 7:
                         builder.setTitle("End Phase Explanation");
-                        builder.setMessage("End Phase");
+                        builder.setMessage("The end of a turn. Any end of turn effect triggers now.");
                         break;
                 }
 
