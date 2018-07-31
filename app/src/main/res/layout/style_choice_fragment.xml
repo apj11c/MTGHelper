@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="22dp"
         android:background="#ebb94f"
         android:onClick="onClickListener"
         android:text="@string/commander"
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="22dp"
         android:background="@android:color/holo_orange_dark"
         android:onClick="onClickListener"
         android:text="@string/standard"
@@ -63,22 +63,19 @@
 
     <ImageView
         android:id="@+id/CommanderHelp"
-        android:onClick="onClickListener"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginBottom="61dp"
+        android:layout_alignTop="@+id/commanderButton"
+        android:layout_toEndOf="@+id/commanderButton"
+        android:onClick="onClickListener"
         app:srcCompat="@android:drawable/ic_menu_help" />
 
     <ImageView
         android:id="@+id/StandardHelp"
-        android:onClick="onClickListener"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginBottom="61dp"
-        android:layout_marginLeft="180dp"
+        android:layout_alignTop="@+id/commanderButton"
+        android:layout_toStartOf="@+id/standardButton"
+        android:onClick="onClickListener"
         app:srcCompat="@android:drawable/ic_menu_help" />
 </RelativeLayout>
