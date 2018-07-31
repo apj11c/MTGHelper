@@ -30,6 +30,7 @@ public class CommanderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_commander);
         String tempCount = getIntent().getStringExtra("players");
+        String flag = getIntent().getStringExtra("flag");
         if (tempCount == "2") {
             playerCount = 2;
         }

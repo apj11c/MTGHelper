@@ -12,6 +12,7 @@ import android.widget.Spinner;
 public class MainActivity extends AppCompatActivity {
 
     Spinner numberOfPlayers;
+    String flag = "0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 playTransaction.commit();
                 break;
             case R.id.standardButton:
+                flag = "1";
                 Fragment playerQuestion2 = new playerQuestion();
                 FragmentTransaction playTransaction2 = getSupportFragmentManager().beginTransaction();
                 playTransaction2.replace(R.id.playerFragment, playerQuestion2);
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 numberOfPlayers = findViewById(R.id.numPlayersSpinner);
                 String players = numberOfPlayers.getSelectedItem().toString();
                 Intent i = new Intent(this, CommanderActivity.class);
+                i.putExtra("flag", flag);
                 i.putExtra("players", players);
                 startActivity(i);
                 break;
