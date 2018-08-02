@@ -8,6 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+/*
+Fragment class used to inflate the "Choose a Style"
+question asked by the user. Committed in MainActivity
+ */
+
 public class styleChoice extends Fragment {
     @Nullable
     @Override

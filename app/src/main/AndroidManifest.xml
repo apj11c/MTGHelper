@@ -22,7 +22,6 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".CommanderActivity" />
-        <activity android:name=".StandardActivity"></activity>
     </application>
 
 </manifest>

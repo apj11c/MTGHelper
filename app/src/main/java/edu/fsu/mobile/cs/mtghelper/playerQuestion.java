@@ -7,7 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+/*
+Fragment class used to inflate the "how many players?"
+question frame. Committed in MainActivity
+ */
 public class playerQuestion extends Fragment {
     @Nullable
     @Override

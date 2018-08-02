@@ -1,12 +1,20 @@
 package edu.fsu.mobile.cs.mtghelper;
 
+/*
+Public class used to keep track of each turn's stats of
+each player.
+ */
+
 public class turnState {
     public int[] health;
     public int[] infect;
     public int[] energy;
     public int playercount;
     public int turnNum;
-
+/*
+constructor used to make a new turnState object,
+given a turnState object
+ */
     public turnState(turnState t){
         turnNum = t.turnNum;
         playercount = t.playercount;
@@ -19,7 +27,10 @@ public class turnState {
             energy[i] = t.energy[i];
         }
     }
-
+/*
+constructor used to make a new turnState object,
+given the player count and player health
+ */
     public turnState(int s,int h){
         playercount = s;
         health = new int[s];

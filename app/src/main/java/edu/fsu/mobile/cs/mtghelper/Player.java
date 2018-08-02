@@ -5,6 +5,10 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+/*
+Public class used to store a player's stats for
+easier access to log each turn
+*/
 public class Player {
     public RelativeLayout rl;
     public TextView health;
@@ -17,7 +21,11 @@ public class Player {
     public Button poisonUp;
     public Button lifegain;
     public Boolean gain = false;
-
+/*
+Copy constructor necessary for copying a new player's
+stats in order for the stats to update properly
+inside of CommanderActivity
+ */
     public Player(Context c){
         rl = new RelativeLayout(c);
     }

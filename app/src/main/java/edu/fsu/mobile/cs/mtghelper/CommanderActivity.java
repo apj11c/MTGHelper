@@ -15,6 +15,14 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/*
+Public Activity class launched when all of the player selections
+have been made. Launched from MainActivity.
+Originally names CommanderActivity because we were going to
+have two separate activities for Standard and Commander, but
+realized it was unnecessary to do so.
+ */
+
 public class CommanderActivity extends AppCompatActivity {
     private int playerCount;
     private turnState currentTurn;
@@ -30,10 +38,15 @@ public class CommanderActivity extends AppCompatActivity {
     private Button history;
     private int activePlayer = 0;
 
+    /*
+    onCreate called when the Activity is created, holds all algorithmic routines
+    for keeping track of the turnState and Player stats
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_commander);
+        //determine how many players there are from in Intent passed from MainActivity
         String tempCount = getIntent().getStringExtra("players");
         //determine whether commander or standard, difference is the starting health
         String format = getIntent().getStringExtra("flag");
@@ -57,6 +70,8 @@ public class CommanderActivity extends AppCompatActivity {
         else {
             playerCount = 4;
         }
+        //initialize the Players to the layout, each player stat is stored
+        //in their own relative layout
         p[0] = new Player(this);
         p[0].rl = findViewById(R.id.P1Frame);
 
@@ -66,17 +81,15 @@ public class CommanderActivity extends AppCompatActivity {
         p[2] = new Player(this);
         p[2].rl = findViewById(R.id.P3Frame);
 
-        Log.e("playercount test", "playercount = " + playerCount);
         p[3] = new Player(this);
         p[3].rl = findViewById(R.id.P4Frame);
+        //set frames invisible if less players than 4
         if(playerCount < 4){
             p[3].rl.setVisibility(View.INVISIBLE);
             if(playerCount < 3){
                 p[2].rl.setVisibility(View.INVISIBLE);
             }
         }
-        //        p[0].rl = (RelativeLayout) findViewById(R.id.P1Frame);
-       // p[1].rl = (RelativeLayout) findViewById(R.id.P2Frame);
 
         // set up turnStates
         currentTurn = new turnState(playerCount, healthNumber);
@@ -84,13 +97,14 @@ public class CommanderActivity extends AppCompatActivity {
         turnLog.add(new turnState(currentTurn));
         currentPlayer = findViewById(R.id.CurrentPlayer);
 
-        for(int i = 0; i <4; i++) { // change the 1 to 6 after adding in all the frames
+        for(int i = 0; i <4; i++) { // loop through each player
             final int x = i; // this is a final version of i to be used in onClickListeners
             p[i].health = (TextView) p[i].rl.findViewById(R.id.HealthLabel);
             p[i].energy = (TextView) p[i].rl.findViewById(R.id.EnergyLabel);
             p[i].poison = (TextView) p[i].rl.findViewById(R.id.PoisonLabel);
             p[i].health1 = (Button) p[i].rl.findViewById(R.id.health_1);
             p[i].health.setText(health);
+            //onClick for the +1/-1 health button
             p[i].health1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -108,6 +122,7 @@ public class CommanderActivity extends AppCompatActivity {
                 }
             });
             p[i].health10 = (Button) p[i].rl.findViewById(R.id.health_10);
+            //onClick for the +10/-10 health button
             p[i].health10.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -124,10 +139,12 @@ public class CommanderActivity extends AppCompatActivity {
                     }
                 }
             });
+            //tracker for energy counters
             p[i].energyUp = (Button) p[i].rl.findViewById(R.id.energyUp);
             p[i].energyUp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    //add energy
                     currentTurn.energy[x]++;
                     p[x].energy.setText("" +currentTurn.energy[x]);
                 }
@@ -136,19 +153,24 @@ public class CommanderActivity extends AppCompatActivity {
             p[i].energyDown.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    //subtract energy
                     currentTurn.energy[x]--;
                     p[x].energy.setText("" + currentTurn.energy[x]);
                 }
             });
+            //tracker for poison counters
             p[i].poisonUp = (Button) p[i].rl.findViewById(R.id.poisonUp);
             p[i].poisonUp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    //add poison, do not need to subtract poison
+                    //it can never be taken away once it is dealt
                     currentTurn.infect[x]++;
                     p[x].poison.setText("" + currentTurn.infect[x]);
                     // add something to check if poison just killed this player.
                 }
             });
+            //toggle setup for the 'damage' or 'life  options
             p[i].lifegain = (Button) p[i].rl.findViewById(R.id.toggle_gain);
             p[i].lifegain.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -222,9 +244,12 @@ public class CommanderActivity extends AppCompatActivity {
         });
 
         nextPhase = findViewById(R.id.NextPhaseButton);
+        //onClick for the nextPhase button, keeps track of which phase it is and
+        //whose turn it is
         nextPhase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //go to the next phase
                 phase++;
                 if(phase > 7){
                     phase = 1;
@@ -266,9 +291,8 @@ public class CommanderActivity extends AppCompatActivity {
         });
 
         final Context c2 = this;
-
+        //history button onClick Listener to see log information
         history.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 //for setting the log information alert dialog
@@ -294,7 +318,6 @@ public class CommanderActivity extends AppCompatActivity {
                 textview.setText(message);
                 AlertDialog.Builder alertDialog = new AlertDialog.Builder(c2);
                 alertDialog.setTitle("History");
-                //alertDialog.setMessage("Here is a really long message.");
                 alertDialog.setView(view);
                 AlertDialog alert = alertDialog.create();
                 alert.show();
