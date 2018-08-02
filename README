@@ -1,0 +1,24 @@
+# MTGHelper
+Open Project
+=============================================
+Andrew Diamond
+John Lascha
+Landon Rogers
+=============================================
+Magic: The Gathering Helper
+=============================================
+How to run:
+  Start application
+  Press "New Game"
+  Select which format (Commander or Standard)
+  Select how many players and press "Start Game"
+  Use buttons to keep track of counters and health
+There are information buttons everywhere for use 
+with beginners.
+=============================================
+Known bugs:
+  Runtime glitch when clicking the energy counter 
+  button, moves the button itself over, something 
+  to do with the relative layout for the xml file
+No known crashes or errors, some warnings inside of
+the xml files with the alignment
